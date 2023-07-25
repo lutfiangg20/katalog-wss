@@ -4,11 +4,30 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Sheets;
+use App\Models\produk;
 
 class GoogleSheetController extends Controller
 {
     public function index(){
         $rows = Sheets::spreadsheet('13xsxRMDO6InHS4OK4GtICRU_ED53nkjzgs_utj6vmZ4')->sheet('Sheet1')->get();
+        $array = array(
+            'http' =>array(
+                'method' =>'GET'
+            )
+            );
+
+        $readsheet = json_decode(
+            file_get_contents('https://sheetdb.io/api/v1/ca6d9dz4skm87', false, stream_context_create($array))
+            );
+
+        $produks = produk::all();
+
+
+            produk::create([$readsheet['produk']]);
+
+
+
+
 
         $header = $rows->pull(0);
         $search = "Bayam";

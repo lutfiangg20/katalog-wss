@@ -1,6 +1,6 @@
 <div>
     {{-- The Master doesn't talk, he acts. --}}
-    <div class="kategori"></div>
+
     {{-- Search bar --}}
     <nav class="navbar navbar-light bg-white fixed-top">
         <form class="form-inline" style="margin:auto; width:450; border-radius:20px">
@@ -114,26 +114,26 @@
                     </div>
                 </div>
 
-                <div class="row" style="text-align:center;">
+                <div class="row" style="text-align:center; padding-top: 5px">
                     <div class="col">
                         <img src="/img-category/favorit.png" alt="">
-                        <small>Semua</small>
+                        <small>Favori</small>
                     </div>
                     <div class="col">
                         <img src="/img-category/produk.png" alt="">
-                        <small>Sayur</small>
+                        <small>Produk Terbaru</small>
                     </div>
                     <div class="col">
                         <img src="/img-category/sale.png" alt="">
-                        <small>Buah</small>
+                        <small>Flash Sale</small>
                     </div>
                     <div class="col">
                         <img src="/img-category/grosir.png" alt="">
-                        <small>Unggas</small>
+                        <small>Grosir</small>
                     </div>
                     <div class="col">
                         <img src="/img-category/cook.png" alt="">
-                        <small>Seafood</small>
+                        <small>Easy Cook</small>
                     </div>
                 </div>
             </div>
