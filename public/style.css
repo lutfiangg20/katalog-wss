@@ -1,0 +1,105 @@
+@import url("https://fonts.googleapis.com/css?family=Muli&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Quicksand&display=swap");
+
+html,
+body {
+    height: 100%;
+    max-width: 491.2px;
+    margin: auto;
+    background-color: #bdbab5;
+}
+
+.container {
+    padding-bottom: 65px;
+    background-color: #f3f4f4;
+}
+
+nav {
+    max-width: 491.2px;
+    margin: auto;
+}
+
+.nav-item {
+    height: 60px;
+}
+
+div.kategori-sticky {
+    position: -webkit-sticky;
+    position: sticky;
+    z-index: 10;
+    top: 0;
+}
+
+div.container-kategori {
+    position: -webkit-sticky;
+    position: sticky;
+    z-index: 20;
+    top: 0;
+    background-image: linear-gradient(to right, #ebf5e9, #ebf5e9, #ffe99c);
+}
+
+.nav-sticky {
+    position: fixed;
+    z-index: 10;
+    top: 0;
+    padding-top: 180px;
+}
+
+.sidebar {
+    background-color: #f3f4f4;
+}
+
+.nav-sticky a {
+    text-decoration: none;
+    color: #000000;
+}
+
+.card a {
+    text-decoration: none;
+    color: #000000;
+}
+
+.akun-header {
+    margin: 0;
+    padding: 20px;
+    background-image: url("/images/header.png");
+    background-size: 100% 100%;
+}
+
+.daftar {
+    margin: 20px;
+}
+
+.box-arrow {
+    fill: green;
+}
+
+.carousel-inner .carousel-item {
+    transition: -webkit-transform 2s ease;
+    transition: transform 2s ease;
+    transition: transform 2s ease, -webkit-transform 2s ease;
+}
+
+.carousel .carousel-indicators button {
+    width: 10px;
+    height: 10px;
+    border-radius: 100%;
+}
+
+.carousel .carousel-inner .carousel-item {
+    transition-duration: 2;
+}
+
+.gambar {
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.side-nav-item {
+    padding-top: 5px;
+}
+
+h5 {
+    font-family: "Noto Sans", sans-serif;
+    text-decoration-color: #303235;
+}
