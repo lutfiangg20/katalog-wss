@@ -4,7 +4,7 @@
     {{-- Search bar --}}
     <nav class="navbar navbar-light bg-white fixed-top">
         <form class="form-inline" style="margin:auto; width:450; border-radius:20px">
-          <input class="form-control" type="search" placeholder="Search" aria-label="Search" name="kategori">
+          <input class="form-control" type="search" placeholder="Search" aria-label="Search" name="kategori" wire:model="cari">
         </form>
       </nav>
 
@@ -53,7 +53,7 @@
                         </a>
                     </div>
                     <div class="item">
-                        <a href="/index-kategori/sayur" style="text-decoration: none; color: #000000">
+                        <a wire:click="sayur" style="text-decoration: none; color: #000000">
                         <img src="/img-category/sayur.png" alt="">
                         <small>Sayur</small>
                         </a>
@@ -143,17 +143,17 @@
 
               {{-- product cart --}}
               <div class="row row-cols-1 row-cols-md-2">
-                @foreach ($values as $value)
-                    @if (data_get($value,'kategori') === $kategori)
+                @foreach ($produks as $p)
+                    @if ($p->kategori === $kategori)
                     <div class="getkategori col">
                         <div class="card shadow-sm  mb-3 bg-white rounded">
-                          <a href="detail/{{data_get($value, 'id')}}">
-                          <div class="gambar" style="padding-top: 250px; background-image: url('{{ data_get($value, 'gambar') }}');  background-size: cover;">
+                          <a href="detail/{{$p->id}}">
+                          <div class="gambar" style="padding-top: 250px; background-image: url('{{ $p->gambar }}');  background-size: cover;">
                           </div>
                           <div class="card-body">
-                            <h5 class="card-title">{{ data_get($value,  'produk') }}</h5>
-                            <h6 class="card-text">{{ data_get($value, 'deskripsi') }}</h6>
-                            <p class="card-text" style="color:#F47229; font-weight:bold;">{{ data_get($value, 'harga') }}</p>
+                            <h5 class="card-title">{{ $p->produk }}</h5>
+                            <h6 class="card-text">{{ $p->deskripsi }}</h6>
+                            <p class="card-text" style="color:#F47229; font-weight:bold;">{{ $p->harga }}</p>
                           </div>
                           </a>
                         </div>

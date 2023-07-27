@@ -96,12 +96,14 @@
     {{-- owl carousel --}}
     <script src="/owlcarousel/owl.carousel.min.js"></script>
     <script>
+
         $('.owl-carousel').owlCarousel({
         loop:false,
-        margin:10,
-        nav:true,
+        margin:15,
+    /*     nav:true, */
         dots:false,
-        nav:false,
+
+        /* nav:false, */
         responsive:{
             0:{
                 items:1
@@ -114,6 +116,8 @@
             }
             }
         })
+
+
     </script>
 
     {{-- <script>

@@ -138,17 +138,17 @@
 
               {{-- product cart --}}
             <div class="row row-cols-2 mx-1" style="">
-                @foreach ($result as $value)
+                @foreach ($produks as $p)
                 <div class="col pt-3">
                   <div class="card shadow-sm bg-white rounded">
-                    <a href="detail/{{$value->id}}">
-                    <div class="gambar" style="padding-top: 200px; background-image: url('{{ $value->gambar }}');">
+                    <a href="detail/{{$p->id}}">
+                    <div class="gambar" style="padding-top: 200px; background-image: url('{{ $p->gambar }}');">
                     </div>
                    {{--  <img src="{{ data_get($value, 'gambar') }}" class="card-img-top" alt="..."> --}}
                     <div class="card-body text-truncate" style="text-align: left">
-                      <h5 class="card-title">{{ $value->produk }}</h5>
-                      <small class="card-text">{{ $value->deskripsi }}</small>
-                      <h6 class="card-text" style="color:#df6207;">{{ $value->harga }}</h6>
+                      <h5 class="card-title">{{ $p->produk }}</h5>
+                      <small class="card-text">{{ $p->deskripsi }}</small>
+                      <h6 class="card-text" style="color:#df6207;">{{ $p->harga }}</h6>
                     </div>
                     </a>
                   </div>

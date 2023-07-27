@@ -141,16 +141,16 @@
                 <div class="col-sm-10" style="background-color: white">
                   <div class="row">
                     <div class="row row-cols-1 row-cols-md-2">
-                        @foreach ($values as $value)
-                            @if (data_get($value,'kategori') === $kategori)
+                        @foreach ($produks as $p)
+                            @if ($p->kategori === $kategori)
                             <div class="col">
                                 <div class="card shadow  mb-3 bg-white rounded" style="width: 185px;">
-                                    <a href="/detail/{{$value->id}}">
-                                    <div class="gambar" style="padding-top: 200px; background-image: url('{{ $value->gambar}}')"></div>
+                                    <a href="/detail/{{$p->id}}">
+                                    <div class="gambar" style="padding-top: 200px; background-image: url('{{ $p->gambar}}')"></div>
                                     <div class="card-body text-truncate">
-                                    <h6 class="card-title">{{ $value->produk}}</h6>
-                                    <small class="card-text">{{ $value->deskripsi}}</small>
-                                    <h6 class="card-text" style="color:#F47229;">{{ $value->harga}}</h6>
+                                    <h6 class="card-title">{{ $p->produk}}</h6>
+                                    <small class="card-text">{{ $p->deskripsi}}</small>
+                                    <h6 class="card-text" style="color:#F47229;">{{ $p->harga}}</h6>
                                     </div>
                                     </a>
                                 </div>

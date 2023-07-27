@@ -2,5 +2,5 @@
 
 @section('content')
 <div class="kategori"></div>
-@livewire('counter')
+@livewire('indexkategori')
 @endsection

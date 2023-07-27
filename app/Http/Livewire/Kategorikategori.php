@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Livewire;
-
+use App\Models\produk;
 use Livewire\Component;
 
 class Kategorikategori extends Component
@@ -10,26 +10,10 @@ class Kategorikategori extends Component
     public function render()
     {
         if($this->cari==''){
-            $options = array(
-                'http' =>array(
-                    'method' =>'GET'
-                )
-                );
-
-                $result = json_decode(
-                    file_get_contents('https://sheetdb.io/api/v1/ca6d9dz4skm87', false, stream_context_create($options))
-                );
+            $produks = produk::all();
         }
         else{
-            $options = array(
-                'http' =>array(
-                    'method' =>'GET'
-                )
-                );
-
-                $result = json_decode(
-                    file_get_contents('https://sheetdb.io/api/v1/ca6d9dz4skm87/search?sheet=Sheet1&produk=*'.$this->cari.'*', false, stream_context_create($options))
-                );
+                $produks = produk::where('produk','LIKE', '%' . $this->cari . '%')->get();
         }
         return view('livewire.kategorikategori',compact('result'));
     }
