@@ -10,7 +10,7 @@ body {
 }
 
 .container {
-    padding-bottom: 65px;
+    padding-bottom: 65;
     background-color: #f3f4f4;
 }
 
@@ -93,13 +93,19 @@ div.container-kategori {
 .gambar {
     background-position: center;
     background-repeat: no-repeat;
+    background-size: cover;
 }
 
 .side-nav-item {
     padding-top: 5px;
 }
 
-h5 {
+.card-title {
     font-family: "Noto Sans", sans-serif;
     text-decoration-color: #303235;
+}
+
+.loadmore a {
+    text-decoration: none;
+    color: #b0b0b0;
 }

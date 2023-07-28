@@ -7,19 +7,50 @@ use Livewire\Component;
 class Indexkategori extends Component
 {
     public $cari;
-    public $kategori;
+    public $post;
+
+    public function mount($kategori){
+        $this->post = $kategori;
+    }
     public function render()
     {
+
         if($this->cari==''){
-            $produks = produk::all();
+            if($this->post==''){
+                $produks = produk::all();
+            }
+            else{
+                $produks = produk::where('kategori','LIKE', '%' . $this->post . '%')->get();
+            }
+
         }
         else{
-                $produks = produk::where('produk','LIKE', '%' . $this->cari . '%')->get();
+                $produks = produk::where('kategori','LIKE', '%' . $this->post . '%')->get();
         }
         return view('livewire.indexkategori',compact('produks'));
     }
+
     public function sayur(){
-        $this->kategori='sayur';
+         $this->post='sayur';
     }
+
+    public function buah(){
+        $this->post='buah';
+    }
+
+    public function ayam(){
+        $this->post='ayam';
+    }
+
+    public function ikan(){
+        $this->post='ikan';
+    }
+
+    public function bumbu(){
+        $this->post='bumbu';
+    }
+
+
+
 
 }

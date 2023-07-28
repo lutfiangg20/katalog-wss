@@ -10,7 +10,7 @@ use DB;
 class GoogleSheetController extends Controller
 {
     public function index(){
-        $rows = Sheets::spreadsheet('13xsxRMDO6InHS4OK4GtICRU_ED53nkjzgs_utj6vmZ4')->sheet('Sheet1')->get();
+        $rows = Sheets::spreadsheet('1jAPCt8ga2G3luLcCRyutfz3d8lcNjVxYGRa0YnjyJcM')->sheet('KATALOG-DB')->get();
         $header = $rows->pull(0);
         $search = "Bayam";
         $values = Sheets::collection(header: $header, rows: $rows);
@@ -18,10 +18,12 @@ class GoogleSheetController extends Controller
         $values->toArray();
         $data = array_values($cek->toArray());
         $produks = produk::all();
-        $count=0;
+
         foreach($data as $d){
-            if($d['produk'] !== $produks[$count]->produk){
+
                 $insert = DB::table('produk')->updateOrInsert([
+                    'produk' => $d['produk'],
+                ],[
                     'produk' => $d['produk'],
                     'kategori' => $d['kategori'],
                     'deskripsi' => $d['deskripsi'],
@@ -29,15 +31,15 @@ class GoogleSheetController extends Controller
                     'gambar' => $d['gambar'],
                 ]);
 
-            }
-            $count=$count++;
+
+
         }
         return view('index',compact('search','produks'));
     }
 
-    public function indexkategori(Request $request){
-        $kategori=$request->kategori;
-        $produks=produk::all();
+    public function indexkategori(Request $kategori){
+        $kategori=$kategori;
+        $produks=produk::find($kategori);
 
         return view('index-kategori',compact('produks','kategori'));
 
@@ -61,7 +63,6 @@ class GoogleSheetController extends Controller
     }
 
     public function kategorikategori($kategori){
-        $kategori=$kategori;
         $produks=produk::all();
         return view('kategori-kategori',compact('produks','kategori'));
     }

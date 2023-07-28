@@ -54,7 +54,7 @@ return [
          * Path to service account json file. You can also pass the credentials as an array
          * instead of a file path.
          */
-        'file' => storage_path('wss-sheet-4622af2ddc12.json'),
+        'file' => storage_path('wss-katalog-8c7533029212.json'),
     ],
 
     /*
